@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+    id "io.freefair.lombok" version "3.8.0"
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.n26'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'io.rest-assured:json-path:4.0.0'
+    implementation 'io.rest-assured:xml-path:4.0.0'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.rest-assured:rest-assured:4.0.0'
+    testImplementation 'io.rest-assured:spring-mock-mvc:4.0.0'
+
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.12.2'
+
+}
